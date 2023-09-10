@@ -53,7 +53,6 @@
 
 #if defined(__wasm__)
   #if defined(__wasm_simd128__)
-    #error simd
     #define XNN_ARCH_WASMSIMD 1
     #define XNN_ARCH_WASM 0
   #else
