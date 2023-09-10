@@ -11,6 +11,7 @@
 #include <stddef.h>
 #include <stdint.h>
 #include <string.h>
+#include <stdio.h>
 
 #ifdef _WIN32
   #include <windows.h>
@@ -2462,7 +2463,7 @@ static void init(void) {
   #ifndef XNN_NO_QS8_OPERATORS
     init_flags |= XNN_INIT_FLAG_QS8;
 
-    std::cout << "init wasmsimd"
+    printf("reg wasmsimd");
 
     xnn_params.qs8.gemm.minmax.gemm = xnn_init_hmp_gemm_ukernel((xnn_gemm_ukernel_function) xnn_qs8_gemm_minmax_gemmlowp_ukernel_3x4c8__wasmsimd_ld64);
     xnn_params.qs8.gemm.minmax.igemm = xnn_init_hmp_igemm_ukernel((xnn_igemm_ukernel_function) xnn_qs8_igemm_minmax_gemmlowp_ukernel_3x4c8__wasmsimd_ld64);
