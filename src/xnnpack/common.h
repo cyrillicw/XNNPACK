@@ -53,15 +53,16 @@
 
 #if defined(__wasm__)
   #if defined(__wasm_simd128__)
+    #error simd
     #define XNN_ARCH_WASMSIMD 1
     #define XNN_ARCH_WASM 0
   #else
+    #error no simd
     #define XNN_ARCH_WASM 1
     #define XNN_ARCH_WASMSIMD 0
   #endif
 #else
-  #define XNN_ARCH_WASM 0
-  #define XNN_ARCH_WASMSIMD 0
+  #error no wasm
 #endif
 
 // Define platform identification macros
